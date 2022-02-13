@@ -1,0 +1,52 @@
+{% extends 'layout.html' %}
+
+{% block content_in %}
+<div class="container pb-4">
+    <div class="row mt-5">
+        <div class="col"></div>
+        <div class="col-6 border border-secondary rounded">
+            <div class="text-center fw-normal fs-3 mt-4">
+                Sign in
+            </div>
+            <form method="post" action="" class="p-3">
+                {{ form.hidden_tag() }}
+                <div class="form-group m-3">
+                    <label for="exampleFormControlInput1" class="form-label">Email</label>
+                    {% if form.email.errors %}
+                    {{ form.email(class="form-control is-invalid", placeholder="user@example.com") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.email.errors %}
+                        <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                        {{ form.email(class="form-control", placeholder="user@example.com") }}
+                    {% endif %}
+                </div>
+                <div class="form-group m-3">
+                    <label for="exampleFormControlInput1" class="form-label">Password</label>
+                    {% if form.password.errors %}
+                    {{ form.password(class="form-control is-invalid", placeholder="123abcABC") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.password.errors %}
+                        <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                        {{ form.password(class="form-control", placeholder="123abcABC") }}
+                    {% endif %}
+                </div>
+                <div class="m-3"><a href='/reset'>Reset Password?</a></div>
+                <div class="form-group m-3">
+                    {{ form.submit(class="btn btn-dark w-100") }}
+                </div>
+
+                <div class="m-3">No account? <a href='/register'>Create One!</a></div>
+
+            </form>
+        </div>
+        <div class="col"></div>
+            
+    </div>
+</div>
+{% endblock content_in %}

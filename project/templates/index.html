@@ -1,0 +1,38 @@
+{% extends 'layout.html' %}
+
+{% block content_out %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col"></div>
+        <div class="col-6">
+            <div class="card">
+                <div class="card-body">
+                    {% if session["user"] %}
+                    <div class="card-title fs-2 text-primary pb-4">Hi, {{session["user"][1]}}</div>
+                    {% else %}
+                    <div class="card-title fs-2 text-primary pb-4">Hi, Welcome to Comments</div>
+                    {% endif %}
+                    <p class='fw-normal lh-small'>
+                        Comments App Is a simple but neat comments system solution for your website.
+                        You can login in using the below credentials
+                    </p>
+
+                    {% if session["user"] %}
+                    <p class='fw-normal'>
+                        <a href='/comment'>Click here</a> check the latest comments
+                    </p>
+                    {% else %}
+                    <p class='fw-normal'>
+                    <p><code>user1@example.com<br />abc123ABC</code>
+                    <p>
+                        <a href='/login'>Click here</a> to login
+                    </p>
+                    {% endif %}
+
+                </div>
+            </div>
+        </div>
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock content_out %}

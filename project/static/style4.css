@@ -1,0 +1,112 @@
+html,
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    scroll-behavior: smooth;
+}
+
+.fa-file-invoice,
+.fa-shopping-cart {
+    font-size: 22px;
+    color: black;
+}
+
+/* Header */
+header {
+    background-image: -webkit-linear-gradient(rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0.1));
+    background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0.1));
+    background-size: cover;
+    background-position: center;
+    height: 93.5vh;
+    color: #ffffff;
+    text-align: center;
+    background-attachment: fixed;
+}
+
+.header-center {
+    position: absolute;
+    width: 1140px;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.page-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+  
+.w-32 {
+    width: 32%;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* Footer */
+footer {
+    color: white;
+    background-color: black;
+}
+
+footer ul {
+    list-style: none;
+}
+
+footer ul li {
+    margin-top: 5px;
+}
+
+footer h6 {
+    color: gray;
+    text-transform: uppercase;
+}
+
+footer .app_download {
+    border: 2px solid white;
+    margin: 10px;
+}
+
+.top-border {
+    border-top: 2px solid gray;
+}
+
+.social-links li {
+    display: inline-block;
+    margin-right: 18px;
+    font-size: 18px;
+}
+
+.pay i {
+    padding-top: 10px;
+    padding-right: 10px;
+    font-size: 32px;
+    color: gray;
+}
+
+.social-links li a {
+    color: white;
+}
+
+.fa-facebook-f:hover {
+    color: #3b5998;
+}
+
+.fa-pinterest:hover {
+    color: #e60023;
+}
+
+.fa-instagram:hover {
+    color: #8134af;
+}
+
+.fa-twitter:hover {
+    color: #00acee;
+}

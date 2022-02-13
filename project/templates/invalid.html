@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+
+{% block title %}| Error 404 {% endblock %}
+{% block content_in %}
+<div class="container p-5 mb-5">
+    <div class="m-5 p-5 text-center">
+        <h3 class="display-5" style="font-family: Arial, Helvetica, sans-serif;"><i class="fas fa-exclamation-triangle text-warning mr-2 mb-1 display-5"></i><span class="mt-2">Invalid URL</span></h3>
+        <p class="lead">
+            {{ text }}
+        </p>
+        <hr class="my-4">
+        <a class="btn btn-warning mb-5 p-2 pl-4 pr-4 rounded-pill" href="/" role="button">Go to home</a>
+    </div>
+</div>
+{% endblock content_in %}

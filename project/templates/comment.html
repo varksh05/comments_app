@@ -1,0 +1,47 @@
+{% extends 'layout.html' %}
+
+{% block title %}| comment {% endblock %}
+{% block content_in %}
+<div class="container p-2">
+    <div class="row mt-4">
+        <div class="col-4">
+            <form method="post" action="" class="p-3">
+                {{ form.hidden_tag() }}
+                <div class="form-group m-3">
+                    <label for="exampleFormControlInput1" class="form-label">What's in your mind?</label>
+                    {% if form.comment.errors %}
+                    {{ form.comment(class="form-control is-invalid", placeholder="user@example.com") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.comment.errors %}
+                        <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                        {{ form.comment(class="form-control", placeholder="user@example.com") }}
+                    {% endif %}
+                </div>
+            
+
+                <div class="form-group m-3">
+                    {{ form.submit(class="btn btn-dark w-100") }}
+                </div>
+
+            </form>
+        </div>
+        <div class="col">
+            <div class="text-end mb-4">
+                <a  href="/change_filter" class='btn btn-primary m-2 text-end'>Filter</a>
+            </div>
+            {% for comment in comment_data %}
+            <div class='p-3 m-2 rounded bg-light border border-dark'>
+                <div class="row">
+                    <div class="col text-start fw-bold">{{comment.created_by}}</div>
+                    <div class="col text-end">11-10-2022</div>
+                </div>
+                <p class='pt-2 text-justify'>{{comment.comment}}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock content_in %}
